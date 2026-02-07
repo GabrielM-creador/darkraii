@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>『DK』Darkraii</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+    url("fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contenedor {
+  padding: 40px;
+  text-align: center;
+}
+
+/* TÍTULO PRINCIPAL */
+.titulo-principal {
+  font-size: 64px;
+  margin-bottom: 35px;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 15px #000,
+    0 0 35px #6b21a8,
+    0 0 60px #000;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 15px #000, 0 0 25px #6b21a8; }
+  100% { text-shadow: 0 0 40px #6b21a8, 0 0 70px #000; }
+}
+
+/* BOTÓN */
+.btn-unirse {
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 2px solid #3aa0ff;
+  background: transparent;
+  color: #3aa0ff;
+  cursor: pointer;
+  box-shadow: 0 0 20px #3aa0ff;
+  margin-bottom: 50px;
+}
+
+/* SECCIONES */
+.titulo {
+  font-size: 28px;
+  margin: 45px 0 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+/* TARJETAS */
+.card {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.card h3 { margin: 0; }
+.card p { margin: 6px 0 0; opacity: 0.8; }
+
+/* ROLES */
+.lider {
+  color: gold;
+  box-shadow: 0 0 35px gold;
+  position: relative;
+}
+
+.lider::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: url("fondo.jpg");
+  background-size: cover;
+  border: 3px solid gold;
+  box-shadow: 0 0 25px gold;
+}
+
+.colider {
+  color: #a855f7;
+  box-shadow: 0 0 30px #a855f7;
+}
+
+.integrante {
+  color: #e5e7eb;
+  box-shadow: 0 0 15px #64748b;
+}
+
+.insano {
+  box-shadow: 0 0 35px red;
+}
+
+.insano .extra {
+  display: block;
+  margin-top: 8px;
+  color: red;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+  <h1 class="titulo-principal">『DK』Darkraii</h1>
+
+  <button class="btn-unirse">Unirse a Darkraii</button>
+
+  <!-- LÍDER -->
+  <h2 class="titulo">Líder</h2>
+  <div class="grid">
+    <div class="card lider">
+      <h3>『DK』Ana</h3>
+      <p>Líder del clan</p>
+    </div>
+  </div>
+
+  <!-- COLÍDER & ENCARGADA -->
+  <h2 class="titulo">Colíder & Decanos & Encargados</h2>
+  <div class="grid">
+    <div class="card colider">
+      <h3>『DK』Helios</h3>
+      <p>Colíder</p>
+    </div>
+
+    <div class="card colider">
+      <h3>『DK』Abii de Ana</h3>
+      <p>Decana</p>
+    </div>
+
+    <div class="card colider">
+      <h3>『DK』Brunela</h3>
+      <p>Encargada de las salas</p>
+    </div>
+  </div>
+
+  <!-- INTEGRANTES -->
+  <h2 class="titulo">Integrantes</h2>
+  <div class="grid">
+    <div class="card integrante"><h3>『DK』Gabriel</h3><p>Integrante</p></div>
+    <div class="card integrante"><h3>『DK』Jere</h3><p>Integrante</p></div>
+    <div class="card integrante"><h3>『DK』Janpier</h3><p>Integrante</p></div>
+    <div class="card integrante"><h3>『DK』Isma</h3><p>Integrante</p></div>
+    <div class="card integrante"><h3>『DK』Cande</h3><p>Integrante</p></div>
+    <div class="card integrante"><h3>『DK』Dante</h3><p>Integrante</p></div>
+    <div class="card integrante"><h3>『DK』Maricita</h3><p>Integrante</p></div>
+
+    <div class="card insano">
+      <h3>『DK』David</h3>
+      <p>Integrante</p>
+      <span class="extra">INSANO</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
