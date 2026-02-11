@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>『DK』Darkraii</title>
+
+<style>
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #000;
+  padding: 25px;
+  border-radius: 14px;
+  color: white;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 0 40px #6b21a8;
+}
+
+/* FOTO MÁS GRANDE */
+.modal-content img {
+  width: 600px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 14px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  animation: imgGlow 3s infinite alternate;
+}
+
+@keyframes imgGlow {
+  0% { box-shadow: 0 0 20px #6b21a8; }
+  100% { box-shadow: 0 0 50px #a855f7; }
+}
+
+.close {
+  cursor: pointer;
+  font-size: 26px;
+  float: right;
+}
+
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+    url("fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contenedor {
+  padding: 40px;
+  text-align: center;
+}
+
+.titulo-principal {
+  font-size: 64px;
+  margin-bottom: 35px;
+  letter-spacing: 4px;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 20px #6b21a8; }
+  100% { text-shadow: 0 0 60px #6b21a8; }
+}
+
+.btn-unirse {
+  padding: 12px 35px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 2px solid #3aa0ff;
+  background: transparent;
+  color: #3aa0ff;
+  cursor: pointer;
+  box-shadow: 0 0 20px #3aa0ff;
+  margin-bottom: 50px;
+}
+
+.titulo {
+  font-size: 28px;
+  margin: 45px 0 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* ===== ROLES ===== */
+.lider { color: gold; box-shadow: 0 0 35px gold; }
+.colider { color: #a855f7; box-shadow: 0 0 30px #a855f7; }
+.decana { color: orange; box-shadow: 0 0 35px orange; }
+.Decana { color: rgb(98,238,231); box-shadow: 0 0 35px rgb(89,219,219); }
+.decano { color: rgb(255,0,191); box-shadow: 0 0 35px rgb(255,0,191); }
+.encargado { color: #eaf7f7; box-shadow: 0 0 25px #e9f3f3; }
+.integrante { color: #3b82f6; box-shadow: 0 0 20px #2563eb; }
+
+.insano { box-shadow: 0 0 35px red; }
+.insano .extra { color: red; font-weight: bold; }
+
+/* ===== 🔥 ANIMACIÓN PARA LOS NOMBRES (AGREGADO) ===== */
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px currentColor; }
+  50% { text-shadow: 0 0 15px currentColor, 0 0 30px currentColor; }
+  100% { text-shadow: 0 0 5px currentColor; }
+}
+
+.card h3 {
+  animation: textGlow 2.5s infinite ease-in-out;
+}
+
+.card p,
+.card .extra {
+  animation: textGlow 3s infinite ease-in-out;
+  opacity: 0.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1 class="titulo-principal">『DK』Darkraii</h1>
+
+<button class="btn-unirse">Unirse a Darkraii</button>
+<button class="btn-unirse" onclick="playMusic()">🎵 Música</button>
+
+<h2 class="titulo">Líder</h2>
+<div class="grid">
+  <div class="card lider" onclick="abrirModal('『DK』Ana','Líder del clan','ana.jpg')">
+    <h3>『DK』Ana</h3><p>LÍDER</p>
+  </div>
+</div>
+
+<h2 class="titulo">Colíder</h2>
+<div class="grid">
+  <div class="card colider" onclick="abrirModal('『DK』Helios','Colíder','helios.jpg')">
+   <h3>『DK』Helios</h3><p>Colíder</p>
+  </div>
+</div>
+
+<h2 class="titulo">Colíder, Decan@s & Encargad@s</h2>
+<div class="grid">
+  <div class="card encargado" onclick="abrirModal('『DK』Brunela','Encargada de salas','brunela.jpg')"><h3>『DK』Brunela</h3><p>Encargada</p></div>
+  <div class="card decana" onclick="abrirModal('『DK』ᴀʙʙɪᴇ¹⁴᭄','Decana','abbie.jpg')"><h3>『DK』ᴀʙʙɪᴇ¹⁴᭄</h3><p>Decana</p></div>
+  <div class="card Decana" onclick="abrirModal('『DK』《❦︎𝔐𝔬𝔯𝔢❦︎》','Decana','more.jpg')"><h3>『DK』《❦︎𝔐𝔬𝔯𝔢❦︎》</h3><p>Decana</p></div>
+  <div class="card decano" onclick="abrirModal('『DK』Isma','Decano','isma.jpg')"><h3>『DK』Isma</h3><p>Decano</p></div>
+</div>
+
+<h2 class="titulo">Integrantes</h2>
+<div class="grid">
+  <div class="card integrante" onclick="abrirModal('『DK』Gabriel','Integrante','gabriel.jpg')"><h3>『DK』Gabriel</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Jere','Integrante','jere.jpg')"><h3>『DK』Jere</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Mai','Integrante','mai.jpg')"><h3>『DK』Mai</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Cande','Integrante','cande.jpg')"><h3>『DK』Cande</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Dante','Integrante','dante.jpg')"><h3>『DK』Dante</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Beto','Integrante','beto.jpg')"><h3>『DK』Beto</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Goku','Integrante','goku.jpg')"><h3>『DK』Goku</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Maricita','Integrante','maricita.jpg')"><h3>『DK』Maricita</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Janpier','Integrante','janpier.jpg')"><h3>『DK』Janpier</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』Richar','Integrante','richar.jpg')"><h3>『DK』Richar</h3><p>Integrante</p></div>
+  <div class="card integrante" onclick="abrirModal('『DK』BG Torres','Integrante','bgtorres.jpg')"><h3>『DK』BG Torres</h3><p>Integrante</p></div>
+
+  <div class="card insano" onclick="abrirModal('『DK』David','INSANO','david.jpg')">
+    <h3>『DK』David</h3>
+    <span class="extra">INSANO</span>
+  </div>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="cerrarModal()">×</span>
+    <img id="modalImg">
+    <h2 id="modalTitulo"></h2>
+    <p id="modalTexto"></p>
+  </div>
+</div>
+
+<script>
+function abrirModal(nombre, texto, img) {
+  modalTitulo.innerText = nombre;
+  modalTexto.innerText = texto;
+  modalImg.src = img;
+  modal.style.display = "flex";
+}
+
+function cerrarModal() {
+  modal.style.display = "none";
+}
+</script>
+
+<audio id="bgMusic" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  bgMusic.play();
+}
+</script>
+
+</body>
+</html>
